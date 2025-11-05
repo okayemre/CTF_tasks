@@ -1,11 +1,11 @@
-from src.my_modul import addiere, ist_gerade
+from src.my_modul import add, is_even
 
 
-def test_addiere():
-    assert addiere(2, 3) == 5
-    assert addiere(-1, 1) == 0
+def test_add():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0
 
 
-def test_ist_gerade():
-    assert ist_gerade(4) is True
-    assert ist_gerade(5) is False
+def test_is_even():
+    assert is_even(4) is True
+    assert is_even(5) is False
