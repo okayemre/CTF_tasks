@@ -68,7 +68,52 @@ print("----------------------------")
 
 # ***************************************************
 
+# Task 3: The Geometry Comparison Challenge
 
+""" Requirements
+1. Rectangle Data: Prompt the user to enter the length and width of a rectangle. Store these as float variables.
+2. Rectangle Calculations:
+- Calculate the area of the rectangle (length * width) and store it.
+- Calculate the circumference of the rectangle (2 * (length + width)) and store it.
+3. Circle Data: Prompt the user to enter the radius of a circle. Store this as a float variable.
+4. Circle Calculations:
+- Define Pi as a float variable (e.g., 3.14159).
+- Calculate the area of the circle (Pi * radius * radius) and store it.
+- Calculate the circumference of the circle (2 * Pi * radius) and store it.
+5. Result Output: Display all calculated areas and circumferences clearly labeled on the console, separated for rectangle and circle.
+6. Area Comparison: Compare the calculated areas of the rectangle and the circle. Output a statement to the console indicating which shape has the larger area or if both areas are equal.
+7. Comments: Use comments to explain the formulas for area and circumference, as well as the comparison logic. Pay attention to clean code structure and indentation."""
+
+length = float(input("\n\nEnter the length of the rectangle: "))  # Prompt user for rectangle length
+width = float(input("Enter the width of the rectangle: "))  # Prompt user for rectangle
+
+area_rectangle = length * width  # Calculate area of rectangle
+circumference_rectangle = 2 * (length + width)  # Calculate circumference of rectangle
+
+radius = float(input("Enter the radius of the circle: "))  # Prompt user for circle radius
+
+#Circle Calculations
+pi = 3.14159  # Define Pi
+area_circle = pi * radius * radius  # Calculate area of circle
+circumference_circle = 2 * pi * radius  # Calculate circumference of circle
+
+#Result Output
+print("\n--- Rectangle Calculations ---")
+print(f"Area of Rectangle: {area_rectangle:.2f}")
+print(f"Circumference of Rectangle: {circumference_rectangle:.2f}")
+print("\n--- Circle Calculations ---")
+print(f"Area of Circle: {area_circle:.2f}")
+print(f"Circumference of Circle: {circumference_circle:.2f}")
+
+# Area Comparison
+if area_rectangle > area_circle:
+    print("\nThe rectangle has a larger area than the circle.")
+elif area_rectangle < area_circle:
+    print("\nThe circle has a larger area than the rectangle.")
+else:
+    print("\nBoth shapes have equal areas.")
+    
+# ***************************************************
 
 
 
