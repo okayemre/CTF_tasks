@@ -151,4 +151,52 @@ print(warehouses)
 print("\n**************2.1.Task Finish**************\n\n")
 
 
-# add_product(warehouse_name, product_details): Belirli bir depoya yeni bir ürün ekler. product_details, {'sku': 'P001', 'name': 'Laptop', 'price': 1200.0, 'quantity': 10} içeren bir sözlüktür. Ürün (sku ile tanımlanır) depoda zaten mevcutsa, sadece miktar buna göre güncellenmelidir (yani, yeni miktar mevcut miktara eklenir).
+# Task 3: Transaction Analysis and Anomaly Detection
+
+
+transactions = [
+    {"id": "TX001", "customer": "Alice", "value": 150.0, "category": "Electronics"},
+    {"id": "TX002", "customer": "Bob", "value": 80.0, "category": "Groceries"},
+    {"id": "TX003", "customer": "Alice", "value": 250.0, "category": "Fashion"},
+    {"id": "TX004", "customer": "Charlie", "value": 20.0, "category": "Services"},
+    {"id": "TX005", "customer": "Alice", "value": 60.0, "category": "Services"},
+    {"id": "TX006", "customer": "Bob", "value": 350.0, "category": "Luxury Goods"},
+    {"id": "TX007", "customer": "David", "value": 90.0, "category": "Books"},
+    {"id": "TX008", "customer": "Charlie", "value": 40.0, "category": "Groceries"},
+    {"id": "TX009", "customer": "Alice", "value": 75.0, "category": "Books"},
+    {"id": "TX010", "customer": "David", "value": 200.0, "category": "Electronics"},
+    {"id": "TX011", "customer": "Bob", "value": 50.0, "category": "Services"},
+    {"id": "TX012", "customer": "Emily", "value": 1000.0, "category": "Electronics"},
+    {"id": "TX013", "customer": "Emily", "value": 550.0, "category": "Services"},
+    {"id": "TX014", "customer": "Frank", "value": 320.0, "category": "Luxury Goods"},
+    {"id": "TX015", "customer": "Grace", "value": 180.0, "category": "Fashion"},
+    {"id": "TX016", "customer": "Alice", "value": 110.0, "category": "Electronics"},
+]
+
+premium_customers = []
+not_premium_customers_cat = {}
+category_not_pre_cust = []
+most_category_not_pre_cust = []
+
+# Determine all transactions made by premium customers with a value over 100.0. The results should be returned as a list of transaction dictionaries.
+
+for transaction in transactions:
+    customer_name = transaction["customer"]
+    category = transaction["category"]
+    if transaction["value"] > 100.0:
+        premium_customers.append(customer_name)
+    elif transaction["value"] <= 100.0:
+        not_premium_customers_cat[category] = (
+            not_premium_customers_cat.get(category, 0) + 1
+        )
+
+most_category_not_pre_cust = sorted(
+    not_premium_customers_cat.items(), key=lambda x: x[1], reverse=True
+)[0:1]
+
+
+print("\n**************3.1.Task Start**************\n")
+pprint(premium_customers)
+print(not_premium_customers_cat)
+print(f"Most Category: {most_category_not_pre_cust}")
+print("\n**************3.1.Task Finish**************\n\n")
