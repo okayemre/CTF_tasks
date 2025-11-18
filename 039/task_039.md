@@ -45,3 +45,7 @@
 - **N:M (Viele zu Viele)**: Mehrere Entitäten A sind mit mehreren Entitäten B verbunden.
 
   ![alt text](./Bilder/image-6.png)
+
+## Praktische Anwendung von ER-Diagrammen
+
+![alt text](./Bilder/image-7.png)
